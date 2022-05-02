@@ -193,7 +193,6 @@ video_player.addEventListener("mouseleave", () => {
 
 
 
-
 // mobile touch controls
 video_player.addEventListener(
   "touchstart",
@@ -201,9 +200,6 @@ video_player.addEventListener(
     controls.classList.add("active");
     setTimeout(() => {
       controls.classList.remove("active");
-      if (tracks.length != 0) {
-        caption_text.classList.add('active');
-      }
     }, 8000);
   },
   { passive: true }
@@ -222,3 +218,27 @@ video_player.addEventListener(
   },
   { passive: true }
 );
+
+
+
+
+
+
+const expandBtn = document.querySelector('.expand-btn'),
+expandContent = document.querySelector('.expand-content'),
+expandIcon = document.querySelector('.expand-btn .material-icons'),
+searchBtn = document.querySelector('.searchbtn'),
+searchBar = document.querySelector('.searchbar'),
+comments = document.querySelectorAll('.comment')
+
+
+expandBtn.onclick = () => {
+  expandContent.classList.toggle('active')
+  expandIcon.innerText = "expand_less"
+  expandContent.classList.contains('active') 
+  ? expandIcon.innerText = "expand_less" 
+  : expandIcon.innerText = "expand_more"
+}
+
+
+document.querySelector('.quantity').innerHTML = comments.length

@@ -10,6 +10,24 @@
 
 </head>
 <body>
+  <header>
+    <div class="logo">LOGO</div>
+    </nav>
+    <div class="searchbar">
+      <input type="text" name="" id="">
+      <div class="searchbtn"><span class="material-icons">
+        search
+        </span></div>
+    </div>
+      <nav class="navbar">
+        <ul class="navbar-items">
+          <li class="navbar-item">
+            <span class="material-icons">
+              menu
+              </span>
+          </li>
+        </ul>
+  </header>
   <section>
     <div class="container">
       <div id="video_player">
@@ -31,13 +49,13 @@
             <div class="controls-left">
 
 
-              <span class="icon">
+              <span class="icon click-effect">
                 <i class="material-icons play_pause">play_arrow</i>
               </span>
-              <span class="icon">
+              <span class="icon click-effect">
                 <i class="material-icons fast-rewind">replay_10</i>
               </span>
-              <span class="icon">
+              <span class="icon click-effect">
                 <i class="material-icons fast-forward">forward_10</i>
               </span>
 
@@ -54,7 +72,7 @@
 
                 <input type="range" min="0" max="100" class="volume_range" />
               </span>
-              <span class="icon">
+              <span class="icon click-effect">
                 <i class="material-icons fullscreen">fullscreen</i>
               </span>
             </div>
@@ -63,6 +81,41 @@
       </div>
     </div>
   </section>
+  <div class="description">
+    <button class="expand-btn"><span>Description</span> <span class="material-icons">
+      expand_more
+      </span></button>
+    <div class="expand-content">
+      <h3>Lorem ipsum dolor sit amet.</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ex, sapiente quod necessitatibus aperiam recusandae tempora enim reiciendis labore at sit quis. Blanditiis facilis, aliquam corrupti quis inventore quaerat unde.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias quas earum eaque distinctio? Impedit, nobis. Error consequatur blanditiis voluptatum culpa!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, recusandae id repellat iure alias fugiat maiores quia, non itaque, et quas repellendus quidem? Suscipit, tempora ab explicabo error fuga maxime?</p>
+    </div>
+  </div>
+
+  <div class="comments">
+    <div class="leave-comment">
+      <h3>Leave Comment</h3>
+      <form>
+        <label for="add_comment">Your Comment</label>
+        <textarea required name="add_comment" id="add_comment"></textarea>
+        <button type="submit" id="submit_comment">Add Comment</button>
+      </form>
+      <h2>Comments: <span class="quantity"></span></h2>
+      <div class="comment">
+        <div class="user_name">Anonymus</div>
+        <div class="user_comment">Lorem, ipsum dolor sit amet consectetur adipisicing elit. A delectus saepe suscipit cum earum harum architecto enim reprehenderit sed alias.</div>
+      </div>
+      <div class="comment">
+        <div class="user_name">Anonymus</div>
+        <div class="user_comment">Lorem, ipsum dolor sit amet consectetur adipisicing elit. A delectus saepe suscipit cum earum harum architecto enim reprehenderit sed alias.</div>
+      </div>
+      <div class="comment">
+        <div class="user_name">Anonymus</div>
+        <div class="user_comment">Lorem, ipsum dolor sit amet consectetur adipisicing elit. A delectus saepe suscipit cum earum harum architecto enim reprehenderit sed alias.</div>
+      </div>
+    </div>
+  </div>
 
   <script src="./script.js"></script>
 
