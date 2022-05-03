@@ -242,3 +242,35 @@ expandBtn.onclick = () => {
 
 
 document.querySelector('.quantity').innerHTML = comments.length
+
+
+
+const menuButton = document.querySelector('.menu'),
+menuContent = document.querySelector('.menu-content'),
+themesBtn = document.querySelector('.themes-btn'),
+themesBox = document.querySelector('.themes-box'),
+menuItems = document.querySelector('.menu-items'),
+backBtn = document.querySelector('.back-btn')
+
+menuButton.onclick = () => {
+  menuButton.classList.toggle('active')
+  menuContent.classList.toggle('active')
+}
+
+themesBtn.onclick = () => {
+  themesBox.classList.add('active')
+  menuItems.classList.remove('active')
+}
+
+backBtn.onclick = () => {
+  themesBox.classList.remove('active')
+  menuItems.classList.add('active')
+}
+
+const setBackground = (color) => {
+  console.log(color)
+}
+
+const setAccentColor = (color) => {
+  console.log(color)
+}

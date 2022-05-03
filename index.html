@@ -20,13 +20,42 @@
         </span></div>
     </div>
       <nav class="navbar">
-        <ul class="navbar-items">
-          <li class="navbar-item">
-            <span class="material-icons">
-              menu
-              </span>
-          </li>
-        </ul>
+            <div class="menu">
+              <div class="line-top"></div>
+              <div class="line-mid"></div>
+              <div class="line-bottom"></div>
+            </div>
+            <div class="menu-content">
+              <ul class="menu-items active">
+                <li>Account</li>
+                <li>Policy</li>
+                <li class="themes-btn">Customize Theme<span class="material-icons">
+                  keyboard_arrow_right
+                  </span></li>
+              </ul>
+              <div class="themes-box">
+                <div class="back-btn"><span class="material-icons">
+                  keyboard_arrow_left
+                  </span>Back</div>
+                <div class="themes">
+                  <div class="backgroud-colors">
+                    <span>Background Color:</span>
+                    <div class="light-theme theme" onclick="setBackground('light')"></div>
+                    <div class="dark-theme theme" onclick="setBackground('dark')"></div>
+                  </div>
+                  <div class="accent-colors">
+                    <span>Accent Color:</span>
+                    <div class="theme orange-theme" onclick="setAccentColor('orange')"></div>
+                    <div class="theme blue-theme"  onclick="setAccentColor('blue')"></div>
+                    <div class="theme red-theme"  onclick="setAccentColor('red')"></div>
+                    <div class="theme green-theme"  onclick="setAccentColor('green')"></div>
+                    <div class="theme purple-theme"  onclick="setAccentColor('purple')"></div>
+                    <!-- <div class="theme "></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
   </header>
   <section>
     <div class="container">
