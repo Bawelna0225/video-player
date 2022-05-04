@@ -1,4 +1,3 @@
-// let's select all required tags or elements
 const video_player = document.querySelector("#video_player"),
   mainVideo = video_player.querySelector("#main-video"),
   progressAreaTime = video_player.querySelector(".progressAreaTime"),
@@ -255,22 +254,115 @@ backBtn = document.querySelector('.back-btn')
 menuButton.onclick = () => {
   menuButton.classList.toggle('active')
   menuContent.classList.toggle('active')
+  menuContent.style.overflow = 'hidden'
 }
 
 themesBtn.onclick = () => {
   themesBox.classList.add('active')
   menuItems.classList.remove('active')
+  const themesHeight = themesBox.offsetHeight
+  menuContent.style.height = `${themesHeight}px`
 }
 
 backBtn.onclick = () => {
   themesBox.classList.remove('active')
   menuItems.classList.add('active')
+  menuContent.style.height = '250px'
+  
 }
+
+const backgrounds = `[
+  {
+    "id": "light",
+    "name": "Dark-Background",
+    "colors": {
+      "navbar": "rgba(240, 240, 240, 1)",
+      "primary": "#fff",
+      "secondary": "#f5f5f5",
+      "third": "#e7e7e7",
+      "text": "#333"
+    }
+  },
+  {
+    "id": "dark",
+    "name": "Dark-Background",
+    "colors": {
+      "navbar": "rgba(0, 0, 0, 1)",
+      "primary": "#333",
+      "secondary": "#222",
+      "third": "#111",
+      "text": "#ddd"
+    }
+  }
+]`
+const accentColors = `[
+  {
+    "id": "orange",
+    "name": "Orange",
+    "color": "#ffa600"
+  },
+  {
+    "id": "blue",
+    "name": "Blue",
+    "color": "#0055ff"
+  },
+  {
+    "id": "red",
+    "name": "Red",
+    "color": "#dc2222"
+  },
+  {
+    "id": "green",
+    "name": "Green",
+    "color": "#38e415"
+  },
+  {
+    "id": "purple",
+    "name": "Purple",
+    "color": "#9b1ac2"
+  }
+]` 
+
+const root = document.documentElement
+const parsedBackgrounds = JSON.parse(backgrounds)
+const parsedAccentColors = JSON.parse(accentColors)
+
+
+root.style.setProperty('--navbar-color', localStorage.getItem('navbar-color'))
+root.style.setProperty('--primary-color', localStorage.getItem('primary'))        
+root.style.setProperty('--secondary-color', localStorage.getItem('secondary'))
+root.style.setProperty('--third-color', localStorage.getItem('third'))
+root.style.setProperty('--text-color', localStorage.getItem('text'))
+root.style.setProperty('--accent-color', localStorage.getItem('accent-color'))
 
 const setBackground = (color) => {
-  console.log(color)
+  parsedBackgrounds.filter((parsedBackground) => {
+    const {id, name, colors: {navbar, primary, secondary, third, text}} = parsedBackground
+    if(id === color){
+
+      root.style.setProperty('--navbar-color', navbar)
+      root.style.setProperty('--primary-color', primary)                     
+      root.style.setProperty('--secondary-color', secondary)
+      root.style.setProperty('--third-color', third)
+      root.style.setProperty('--text-color', text)
+
+      localStorage.setItem('navbar-color', navbar)
+      localStorage.setItem('primary', primary)                   
+      localStorage.setItem('secondary', secondary)
+      localStorage.setItem('third', third)
+      localStorage.setItem('text', text)
+    }
+  })
 }
 
-const setAccentColor = (color) => {
-  console.log(color)
+const setAccentColor = (accent) => {
+  parsedAccentColors.filter((parsedAccentColor) => {
+    const {id, name, color} = parsedAccentColor
+    if(id === accent){
+
+      root.style.setProperty('--accent-color', color)
+
+      localStorage.setItem('accent-color', color)
+    }
+  })
 }

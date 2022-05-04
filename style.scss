@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 :root{
-  --navbar-color: rgba(0, 0, 0, 0.8);
+  --navbar-color: rgba(0, 0, 0, 1);
   --primary-color: #333;
   --secondary-color: #222;
   --third-color: #111;
@@ -73,7 +73,7 @@ header{
       .line-top, .line-mid, .line-bottom{
         width: 30px;
         height: 3px;
-        background-color: #fff;
+        background-color: var(--text-color);
         transition: 300ms linear;
 
       }
@@ -97,9 +97,10 @@ header{
       width: min(100vw, 400px);
       padding: 30px;
       // height: max-content;
+      height: 250px;
       position: fixed;
       user-select: none;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: var(--navbar-color);
       backdrop-filter: blur(10px);
       border-bottom-left-radius: 8px;
       right: 0px;
@@ -123,10 +124,9 @@ header{
         position: absolute;
         width: 100%;
         height: max-content;
-        background-color: rgba(0, 0, 0, 0.9);
+        // overflow-y: scroll;
         transform: translateX(400px);
         transition: 300ms ease-in-out;
-      
         top: 0;
         padding-bottom: 30px;
         .back-btn{
@@ -152,7 +152,7 @@ header{
           span{
             width: 100%;
             font-size: 1.3rem;
-            // background-color: var(--primary-color);
+            color: var(--accent-color);
           }
           .theme{
             background-color: #fff;
@@ -184,7 +184,7 @@ header{
             gap: 20px;
             flex-wrap: wrap;
             .orange-theme{
-              background-color: var(--accent-color);
+              background-color: #ffa600;
             }
             .blue-theme{
               background-color: #0055ff;
@@ -229,7 +229,7 @@ header{
     }
   }
   .logo{
-    font-size: 1.5rem;
+    font-size: min(1.5rem, 5vw);
   }
   .searchbar{
     display: flex;
@@ -251,7 +251,7 @@ header{
       background-color: var(--secondary-color);
       display: flex;
       padding: 7px;
-      width: 10%;
+      width: max(10%, 40px);
       justify-content: center;
       align-items: center;
     }
@@ -551,7 +551,8 @@ section {
     flex-direction: column;
     align-items: flex-start;
     #add_comment{
-      background-color: #444;
+      background-color: var(--primary-color);
+      padding: 10px;
       border: none;
       outline: none;
       width: 100%;
