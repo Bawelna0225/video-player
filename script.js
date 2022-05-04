@@ -267,7 +267,7 @@ themesBtn.onclick = () => {
 backBtn.onclick = () => {
   themesBox.classList.remove('active')
   menuItems.classList.add('active')
-  menuContent.style.height = '250px'
+  menuContent.style.height = '220px'
   
 }
 
@@ -276,7 +276,7 @@ const backgrounds = `[
     "id": "light",
     "name": "Dark-Background",
     "colors": {
-      "navbar": "rgba(240, 240, 240, 1)",
+      "navbar": "rgba(232, 232, 232, 0.95)",
       "primary": "#fff",
       "secondary": "#f5f5f5",
       "third": "#e7e7e7",
@@ -287,7 +287,7 @@ const backgrounds = `[
     "id": "dark",
     "name": "Dark-Background",
     "colors": {
-      "navbar": "rgba(0, 0, 0, 1)",
+      "navbar": "rgba(20, 20, 20, 0.95)",
       "primary": "#333",
       "secondary": "#222",
       "third": "#111",
@@ -351,6 +351,8 @@ const setBackground = (color) => {
       localStorage.setItem('secondary', secondary)
       localStorage.setItem('third', third)
       localStorage.setItem('text', text)
+
+      return currentBackground
     }
   })
 }
@@ -366,3 +368,34 @@ const setAccentColor = (accent) => {
     }
   })
 }
+
+
+
+
+const placeDivsRandomnly = () => {
+  const backgroundDivs = [...document.getElementsByClassName('div')],
+  winWidth = window.innerWidth,
+  winHeight = window.innerHeight
+
+  const getRandomNumber = (min, max) => {
+    return Math.random() * (max - min) + min  
+  }
+  backgroundDivs.forEach(div => {
+      randomTop = getRandomNumber(0, winHeight)
+      randomLeft = getRandomNumber(0, winWidth)
+
+      div.style.top = randomTop + 'px'
+      div.style.left = randomLeft + 'px'
+  })
+}
+let resize
+placeDivsRandomnly()
+window.onresize = () => {
+  clearTimeout(resize)
+  // placeDivsRandomnly()
+  resize = setTimeout(placeDivsRandomnly, 300)
+}
+
+
+
+  

@@ -6,14 +6,13 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 .material-icons {
   user-select: none;
   -webkit-user-select: none;
   cursor: pointer;
 }
 :root{
-  --navbar-color: rgba(0, 0, 0, 1);
+  // --navbar-color: rgba(0, 0, 0, 1);
   --primary-color: #333;
   --secondary-color: #222;
   --third-color: #111;
@@ -22,6 +21,18 @@
 }
 body {
   background-color: var(--primary-color);
+  overflow-x: hidden;
+}
+.div{
+  border: 4px solid var(--accent-color);
+  position: fixed;
+  background-color: var(--navbar-color);
+  transition: 300ms ease-in-out;
+  width: 350px;
+  height: 350px;
+  top: -32px;
+  left: 100px;
+  z-index: -10;
 }
 header{
   display: flex;
@@ -95,9 +106,9 @@ header{
     }
     .menu-content{
       width: min(100vw, 400px);
-      padding: 30px;
+      padding:0px 30px;
       // height: max-content;
-      height: 250px;
+      height: 220px;
       position: fixed;
       user-select: none;
       background-color: var(--navbar-color);
